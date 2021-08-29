@@ -1,0 +1,43 @@
+start new app
+ng new appname --style=scss
+
+
+run the app and open the browser
+ng serve -o
+
+
+to update all packages 
+npx npm-check-updates -u
+
+ng g c newComponent
+
+for a specific module
+ng g c nameComponent --module=app.module.ts
+
+
+
+
+
+
+ng generate service User
+
+
+
+ng add @angular/material
+
+npm install bootstrap
+
+
+
+In order to update the angular-cli package installed globally in your system, you need to run:
+
+npm uninstall -g @angular/cli
+npm install -g @angular/cli@latest
+Depending on your system, you may need to prefix the above commands with sudo.
+
+Also, most likely you want to also update your local project version, because inside your project directory it will be selected with higher priority than the global one:
+
+rm -rf node_modules
+npm uninstall --save-dev @angular/cli
+npm install --save-dev @angular/cli@latest
+npm install
