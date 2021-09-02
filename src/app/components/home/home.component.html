@@ -21,18 +21,23 @@
         <div class="game">
             <div class="game-thumb-container">
 
-                <!-- <img 
-                *ngif="game.background_image"
-                src="{{ game.background_img }}"
+                <img 
+                *ngIf="game.background_image"
+                src="{{ game.background_image }}"
                 alt="thumbnail"
-                class="game-thumbnail">
-                <p *ngif="!game.background_img">No Image</p> -->
+                class="game-thumbnail"> 
+                 <p *ngIf="!game.background_image">No Image</p>
             </div>
             <div class="game-description">
                 <p class="game-name">{{game.name}}</p>
+                <h1 style="color: aliceblue">{{game.background_image}}</h1>
                 <div class="game-platforms">
-                    <img 
-                    *ngfor="let gamePlatform of game.parent_platform"
+                    <ng-container *ngFor="let gamePlatform of game.parent_platforms">
+                        <h2>{{gamePlatform.platform.slug}}</h2>
+                        
+                    </ng-container>
+                     <img 
+                    *ngFor="let gamePlatform of game.parent_platforms"
                     src="assets\images\platforms\{{gamePlatform.platform.slug}}.svg" 
                     alt="slug" class="game-platform">
                 </div>
